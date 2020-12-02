@@ -15,9 +15,6 @@
 [rebase]
 	autoSquash = true
 	autoStash = true
-[user]
-	name = scribu
-	email = mail@scribu.net
 [alias]
 	ci = commit
 	cia = commit --amend --no-edit
