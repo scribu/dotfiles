@@ -1,0 +1,32 @@
+# Homebrew Bash completions
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+
+# Add pipx completions
+eval "$(register-python-argcomplete pipx)"
+
+# source /Users/scribu/git/tresillo/.venv/bin/activate  # commented out by conda initialize
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/scribu/opt/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/scribu/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/scribu/opt/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/scribu/opt/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+# Created by `userpath` on 2020-05-08 16:10:22
+export PATH="$PATH:/Users/scribu/.local/bin"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+alias rc='rails console'

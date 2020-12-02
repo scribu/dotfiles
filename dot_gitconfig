@@ -1,0 +1,51 @@
+[core]
+	excludesfile = ~/.gitignore
+	whitespace = -trailing-space
+	autocrlf = input
+[color]
+	ui = auto
+[merge]
+	stat = true
+[diff]
+	noprefix = true
+	algorithm = patience
+	compactionHeuristic = true
+[push]
+	default = upstream
+[rebase]
+	autoSquash = true
+	autoStash = true
+[user]
+	name = scribu
+	email = mail@scribu.net
+[alias]
+	ci = commit
+	cia = commit --amend --no-edit
+	co = checkout
+	s = status -sb
+	d = diff
+	ds = diff --staged
+	l = log --oneline --decorate --graph
+	pr = pull-request
+	down = pull --rebase
+	onup = push
+	up-sub = "!f() { cd $1 && git checkout master && git pull && git submodule update --init --recursive; }; f"
+	fixup = "!f() { REV=$(git rev-parse $1); git commit --fixup=$REV && git rebase -i $REV^; }; f"
+	up = !git submodule update --init --recursive
+	unstage = reset HEAD
+	stage = add
+	snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
+	bb = repo bb
+	hub = repo hub
+	start = !git init && git commit --allow-empty -m \"Initial commit\"
+[credential]
+	helper = osxkeychain
+[web]
+	browser = open
+
+[url "git://github.com/"]
+	insteadOf = gh:
+
+[include]
+  # For username / creds / etc
+  path = ~/.gitconfig.local
