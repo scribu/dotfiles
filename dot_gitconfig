@@ -10,6 +10,8 @@
 	noprefix = true
 	algorithm = patience
 	compactionHeuristic = true
+[pull]
+	rebase = false
 [push]
 	default = upstream
 [rebase]
@@ -44,5 +46,5 @@
 	insteadOf = gh:
 
 [include]
-  # For username / creds / etc
-  path = ~/.gitconfig.local
+	# For username / creds / etc
+	path = ~/.gitconfig.local
