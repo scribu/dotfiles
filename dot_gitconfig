@@ -24,7 +24,6 @@
 	cia = commit --amend --no-edit
 	co = checkout
 	d = diff
-	down = pull --rebase
 	ds = diff --staged
 	fixup = "!f() { REV=$(git rev-parse $1); git commit --fixup=$REV && git rebase -i $REV^; }; f"
 	l = log --oneline --decorate --graph
@@ -33,8 +32,6 @@
 	stage = add
 	start = !git init && git commit --allow-empty -m \"Initial commit\"
 	unstage = reset HEAD
-	up = !git submodule update --init --recursive
-	up-sub = "!f() { cd $1 && git checkout master && git pull && git submodule update --init --recursive; }; f"
 
 [credential]
 	helper = osxkeychain
