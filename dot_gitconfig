@@ -18,25 +18,24 @@
 	autoSquash = true
 	autoStash = true
 [alias]
+	# display branches sorted by last commit
+	brt = "!git for-each-ref refs/heads --color=always --sort -committerdate --format='%(HEAD)%(color:reset);%(color:yellow)%(refname:short)%(color:reset);%(contents:subject);%(color:green)(%(committerdate:relative))%(color:blue);<%(authorname)>' | column -t -s ';'"
 	ci = commit
 	cia = commit --amend --no-edit
 	co = checkout
-	s = status -sb
 	d = diff
-	ds = diff --staged
-	l = log --oneline --decorate --graph
-	pr = pull-request
 	down = pull --rebase
-	onup = push
-	up-sub = "!f() { cd $1 && git checkout master && git pull && git submodule update --init --recursive; }; f"
+	ds = diff --staged
 	fixup = "!f() { REV=$(git rev-parse $1); git commit --fixup=$REV && git rebase -i $REV^; }; f"
-	up = !git submodule update --init --recursive
-	unstage = reset HEAD
-	stage = add
+	l = log --oneline --decorate --graph
+	s = status -sb
 	snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
-	bb = repo bb
-	hub = repo hub
+	stage = add
 	start = !git init && git commit --allow-empty -m \"Initial commit\"
+	unstage = reset HEAD
+	up = !git submodule update --init --recursive
+	up-sub = "!f() { cd $1 && git checkout master && git pull && git submodule update --init --recursive; }; f"
+
 [credential]
 	helper = osxkeychain
 [web]
