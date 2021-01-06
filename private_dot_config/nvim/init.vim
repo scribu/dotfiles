@@ -1,20 +1,25 @@
+" Disable Python2
+let g:loaded_python_provider = 0
+let g:python3_host_prog = '/usr/local/bin/python3'
+
 call plug#begin('~/.config/nvim/plugged')
 " Plug 'ervandew/supertab'
+" Plug 'ludovicchabant/vim-gutentags'
+" Plug 'tpope/vim-rhubarb' "  for fugitive/Gbrowse
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'davidhalter/jedi-vim'
 Plug 'dyng/ctrlsf.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'kien/ctrlp.vim'
-" Plug 'ludovicchabant/vim-gutentags'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neomake/neomake'
+Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
-" Plug 'tpope/vim-rhubarb' "  for fugitive/Gbrowse
 Plug 'tpope/vim-vinegar'
 call plug#end()
 
@@ -50,5 +55,10 @@ au FileType python map <silent> <leader>B Oimport pdb; pdb.set_trace()<esc>
 " Jedi (Python)
 let g:jedi#completions_enabled = 0  " Completions are too slow
 
+let g:ctrlsf_backend = 'rg'
+
 " Easily set current directory to current file
 map ,cd :lcd %:p:h<CR>:pwd<CR>
+
+" Typescript
+au FileType typescript setlocal shiftwidth=2 softtabstop=2 expandtab
