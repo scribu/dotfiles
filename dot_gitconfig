@@ -6,10 +6,12 @@
 	ui = auto
 [merge]
 	stat = true
+	conflictstyle = diff3
 [diff]
 	noprefix = true
 	algorithm = patience
 	compactionHeuristic = true
+	external = difft
 [pull]
 	rebase = false
 [push]
