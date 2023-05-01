@@ -1,0 +1,6 @@
+# Completions
+autoload -U compinit && compinit
+zmodload -i zsh/complist
+
+# Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
