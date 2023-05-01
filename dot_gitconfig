@@ -11,7 +11,7 @@
 	noprefix = true
 	algorithm = patience
 	compactionHeuristic = true
-	external = difft
+	# external = difft
 [pull]
 	rebase = false
 [push]

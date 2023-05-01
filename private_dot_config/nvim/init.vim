@@ -10,6 +10,7 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'davidhalter/jedi-vim'
 Plug 'dyng/ctrlsf.vim'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'github/copilot.vim', {'branch': 'release'}
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'kien/ctrlp.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
