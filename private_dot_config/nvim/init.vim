@@ -13,7 +13,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'github/copilot.vim', {'branch': 'release'}
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'kien/ctrlp.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neomake/neomake'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
