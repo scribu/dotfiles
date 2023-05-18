@@ -35,6 +35,13 @@ set wildignore=*~,*.pyc
 let g:netrw_list_hide = '\~\*\?$,\.pyc$'
 
 " Neomake
+let g:neomake_precommit_maker = {
+    \ 'exe': 'pre-commit',
+	\ 'args': ['run', '--files'],
+    \ }
+
+let g:neomake_python_enabled_makers = ['precommit', 'flake8']
+
 call neomake#configure#automake('w')
 
 " CtrlSF
