@@ -4,3 +4,8 @@ zmodload -i zsh/complist
 
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Pipx
+export PATH="$PATH:$HOME.local/bin"
+
+eval "$(register-python-argcomplete pipx)"
