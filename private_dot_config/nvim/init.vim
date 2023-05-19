@@ -57,8 +57,8 @@ nnoremap <C-F>t :CtrlSFToggle<CR>
 inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 
 " Python breakpoints
-au FileType python map <silent> <leader>b oimport pdb; pdb.set_trace()<esc>
-au FileType python map <silent> <leader>B Oimport pdb; pdb.set_trace()<esc>
+au FileType python map <silent> <leader>b obreakpoint()<esc>
+au FileType python map <silent> <leader>B Obreakpoint()<esc>
 
 " Jedi (Python)
 let g:jedi#completions_enabled = 0  " Completions are too slow
