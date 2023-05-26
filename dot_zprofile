@@ -1,3 +1,5 @@
+bindkey \^U backward-kill-line
+
 # Completions
 autoload -U compinit && compinit
 zmodload -i zsh/complist
