@@ -12,7 +12,8 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'github/copilot.vim', {'branch': 'release'}
 Plug 'hynek/vim-python-pep8-indent'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mustache/vim-mustache-handlebars'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neomake/neomake'
 Plug 'sheerun/vim-polyglot'
@@ -43,6 +44,9 @@ let g:neomake_precommit_maker = {
 let g:neomake_python_enabled_makers = ['precommit', 'flake8']
 
 call neomake#configure#automake('w')
+
+" CtrlP - ignore files in .gitingore
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " CtrlSF
 let g:ctrlsf_default_view_mode = 'compact'
