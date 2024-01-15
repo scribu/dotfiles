@@ -23,7 +23,13 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
+Plug 'shaunsingh/solarized.nvim'
 call plug#end()
+
+" Theme
+let g:solarized_borders = v:true
+let g:solarized_contrast = v:true
+colorscheme solarized
 
 " Persistent undo
 set undofile
