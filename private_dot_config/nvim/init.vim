@@ -16,6 +16,8 @@ Plug 'github/copilot.vim', {'branch': 'release'}
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'neomake/neomake'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'shaunsingh/solarized.nvim'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
@@ -23,7 +25,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
-Plug 'shaunsingh/solarized.nvim'
 call plug#end()
 
 " Theme
@@ -31,11 +32,30 @@ let g:solarized_borders = v:true
 let g:solarized_contrast = v:true
 colorscheme solarized
 
+" Treesitter
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+    auto_install = true,
+    highlight = {
+        enable = true,
+    },
+    indent = {
+        enable = true,
+    },
+    incremental_selection = {
+        enable = true,
+        keymaps = {
+            init_selection = '<CR>',
+            scope_incremental = '<CR>',
+            node_incremental = '<TAB>',
+            node_decremental = '<S-TAB>',
+        },
+    },
+}
+EOF
+
 " Persistent undo
 set undofile
-
-" Smaller tabs
-set tabstop=4 shiftwidth=4
 
 " Ignore some file types
 set wildignore=*~,*.pyc
