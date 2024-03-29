@@ -86,9 +86,19 @@ nnoremap <C-F>o :CtrlSFOpen<CR>
 nnoremap <C-F>t :CtrlSFToggle<CR>
 inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 
-" Python breakpoints
-au FileType python map <silent> <leader>b obreakpoint()<esc>
-au FileType python map <silent> <leader>B Obreakpoint()<esc>
+" Breakpoints
+function InsertDebug()
+    if &filetype == "python"
+        execute "normal! oimport ipdb;ipdb.set_trace()\<esc>"
+    elseif &filetype == "javascript"
+        execute "normal! odebugger;\<esc>"
+    elseif &filetype == "html" || &filetype == "htmldjango"
+        execute "normal! o{% load debugger_tags %}{{ page\|ipdb }}\<esc>4bcw"
+    else
+        echoerr "Unknown filetype - cannot insert breakpoint"
+    endif
+endfunction
+nmap <leader>b <esc>:call InsertDebug()<CR>
 
 " Jedi (Python)
 let g:jedi#completions_enabled = 0  " Completions are too slow
