@@ -30,3 +30,5 @@ alias rc='rails console'
 
 # Added by serverless binary installer
 export PATH="$HOME/.serverless/bin:$PATH"
+
+complete -C /opt/homebrew/bin/terraform terraform

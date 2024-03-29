@@ -15,5 +15,11 @@ zmodload -i zsh/complist
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# PostgreSQL
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+
 # Pipx
 export PATH="$PATH:$HOME/.local/bin"
+
+# Yarn
+export PATH="$PATH:$(yarn global bin)"
