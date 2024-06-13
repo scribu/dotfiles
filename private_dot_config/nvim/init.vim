@@ -13,17 +13,16 @@ Plug 'davidhalter/jedi-vim'
 Plug 'dyng/ctrlsf.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'github/copilot.vim', {'branch': 'release'}
-Plug 'hynek/vim-python-pep8-indent'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'neomake/neomake'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'shaunsingh/solarized.nvim'
-Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
+Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-vinegar'
 call plug#end()
 
@@ -89,7 +88,7 @@ inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 " Breakpoints
 function InsertDebug()
     if &filetype == "python"
-        execute "normal! oimport ipdb;ipdb.set_trace()\<esc>"
+        execute "normal! obreakpoint()\<esc>"
     elseif &filetype == "javascript"
         execute "normal! odebugger;\<esc>"
     elseif &filetype == "html" || &filetype == "htmldjango"
