@@ -6,7 +6,6 @@ call plug#begin('~/.config/nvim/plugged')
 " Plug 'ervandew/supertab'
 " Plug 'ludovicchabant/vim-gutentags'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'tpope/vim-rhubarb' "  for fugitive/Gbrowse
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'davidhalter/jedi-vim'
@@ -20,7 +19,7 @@ Plug 'shaunsingh/solarized.nvim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rhubarb'  " for fugitive/GBrowse
 Plug 'tpope/vim-surround'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-vinegar'
