@@ -12,14 +12,20 @@ setopt HIST_SAVE_NO_DUPS
 autoload -U compinit && compinit
 zmodload -i zsh/complist
 
-# Homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
 # PostgreSQL
-export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+
+# Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Pipx
 export PATH="$PATH:$HOME/.local/bin"
 
 # Yarn
 export PATH="$PATH:$(yarn global bin)"
+
+# Fix Node SSL issue (affects Github's copilot.vim)
+export NODE_EXTRA_CA_CERTS=/private/etc/ssl/cert.pem
