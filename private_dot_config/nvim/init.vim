@@ -11,17 +11,18 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'davidhalter/jedi-vim'
 Plug 'dyng/ctrlsf.vim'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'folke/flash.nvim', {'branch': 'main'}
 Plug 'github/copilot.vim', {'branch': 'release'}
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'neomake/neomake'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'shaunsingh/solarized.nvim'
+Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'  " for fugitive/GBrowse
 Plug 'tpope/vim-surround'
-Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-vinegar'
 call plug#end()
 
@@ -102,6 +103,3 @@ nmap <leader>b <esc>:call InsertDebug()<CR>
 let g:jedi#completions_enabled = 0  " Completions are too slow
 
 let g:ctrlsf_backend = 'rg'
-
-" Easily set current directory to current file
-map ,cd :lcd %:p:h<CR>:pwd<CR>
