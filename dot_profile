@@ -1,4 +1,0 @@
-# Expose packages from `pip3 install --user`
-export PATH="$PATH:/Users/cristiburca/Library/Python/3.8/bin"
-
-conda activate base
