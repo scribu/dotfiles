@@ -6,7 +6,6 @@ call plug#begin('~/.config/nvim/plugged')
 " Plug 'ervandew/supertab'
 " Plug 'ludovicchabant/vim-gutentags'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'davidhalter/jedi-vim'
 Plug 'dyng/ctrlsf.vim'
@@ -14,6 +13,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'folke/flash.nvim', {'branch': 'main'}
 Plug 'github/copilot.vim', {'branch': 'release'}
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'mitsuhiko/vim-jinja'
 Plug 'neomake/neomake'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'shaunsingh/solarized.nvim'
